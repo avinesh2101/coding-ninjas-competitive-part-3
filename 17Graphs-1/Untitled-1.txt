@@ -1,0 +1,60 @@
+#define pii pair<int, int>
+class Solution {
+public:
+    vector<int> getOrder(vector<vector<int>>& tasks) {
+        map<int, vector<pii>> mp;
+        int mx = INT_MIN;
+        priority_queue<pii, vector<pii>, greater<pii>> pq;
+        const int n = tasks.size();
+        
+        for(int i = 0; i < n; i++) {
+            mp[tasks[i][0]].push_back({tasks[i][1], i});
+            mx = max(tasks[i][0], mx);
+        }
+        
+        vector<int> res;
+        
+        auto it = mp.lower_bound(1);
+        int st = it -> first , et = it -> first;
+        
+        while(st <= mx) {
+            auto it = mp.lower_bound(st);
+            
+            if(it == mp.end()) {
+                break;
+            }
+            
+            while(it -> first <= et && it != mp.end()) {
+                for(auto x : it -> second) pq.push(x);
+                it++;
+            }
+            
+            if(!pq.empty()) {
+                pii temp = 
+pq.top
+();
+                pq.pop();
+                res.push_back(temp.second);
+                st = et + 1;
+                et += temp.first; 
+            } else {
+                auto it = mp.lower_bound(et + 1);
+                if(it != mp.end()) {
+                    st = et = it -> first;
+                } else {
+                    break;
+                }
+            }
+            
+        }
+        while(!pq.empty()) {
+            pii temp = 
+pq.top
+();
+            pq.pop();
+            res.push_back(temp.second);
+        }
+        
+        return res;
+    }
+};
