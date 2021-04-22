@@ -50,14 +50,14 @@ int main() {
     }
   }
 
-  for(int i=0; i<e; i++){//thhis means edge btw f and s
+  for(int i=0; i<e; i++){//this means edge btw f and s
     int f,s;
     cin >> f >> s; 
     edges[f][s]=1;
     edges[s][f]=1;
   }
     
-    bool*visited = new bool[n];//we are making a visited array in ain function to get the bfs for in case of more than one component
+    bool*visited = new bool[n];//we are making a visited array in main function to get the BFS for in case of more than one component
   for(int i=0;i<n;i++){visited[i]=false; }
     for(int i=0;i<n;i++){
         if(!visited[i]){//i is start
