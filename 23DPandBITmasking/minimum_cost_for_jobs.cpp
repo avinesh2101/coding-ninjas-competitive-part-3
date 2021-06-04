@@ -38,7 +38,7 @@ int iterativeMinCost(int cost[][4],int n)
 
 //------------------------------recursive+memoization------------------
 int minCost(int cost[4][4] , int n,int p,int mask,int*dp)
-{
+{//p person
     if(p>=n)
     {
         return 0;
