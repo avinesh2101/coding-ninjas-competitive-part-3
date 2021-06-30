@@ -42,6 +42,7 @@ void func(long long n)
 
 long long * precal(long long * res, long long * phi, long long n) {
   for (long long i = 1; i <= n; ++i) phi[i] = i;
+  
   for (long long i = 2; i <= n; ++i) {
     if (phi[i] == i) {
       for (int j = i; j <= n; j += i) {
@@ -50,6 +51,7 @@ long long * precal(long long * res, long long * phi, long long n) {
       }
     }
   }
+
   for (long long i = 1; i <= n; ++i) {
     for (int j = i; j <= n; j += i) res[j] += (i * phi[i]);
   }
