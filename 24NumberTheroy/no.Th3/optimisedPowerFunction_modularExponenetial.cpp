@@ -24,6 +24,26 @@ int pow(int a,int b,int c)
     }
 }
 
+// mod exp - iterative way
+int modExp(int a,int b,int c)
+{
+    long ans=1;
+    //based on breaking b into binomial representation and then using that to solve the problem
+    while(b!=0)
+    {
+        if(b&1 == 1)//rightmost bit is set or is 1
+        {
+            // then multilply with a ki power that thing
+            ans = (ans*a)%c;
+        }
+        a = (a*a)%c;
+        b = b/2;
+
+
+    }
+
+    return ans;
+}
 int main()
 {
     int a,b,c;
