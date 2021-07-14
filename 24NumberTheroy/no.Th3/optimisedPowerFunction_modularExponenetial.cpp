@@ -20,7 +20,7 @@ int pow(int a,int b,int c)
         long smallAns = pow(a,(b-1)/2,c);
         long ans = a % c;//bringing it down to the range of c as ans can be lrger then c
         ans  = (ans*smallAns*smallAns)%c;
-        return int((ans+c)%c);
+        return int((ans+c)%c);  
     }
 }
 
