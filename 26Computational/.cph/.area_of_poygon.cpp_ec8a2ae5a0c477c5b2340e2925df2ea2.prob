@@ -1,0 +1,1 @@
+{"name":"Local: area_of_poygon","url":"e:\\coding ninjas\\code\\p3\\26Computational\\area_of_poygon.cpp","tests":[{"id":1627890947655,"input":"4\n1 1 \n1 5\n5 5\n5 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\coding ninjas\\code\\p3\\26Computational\\area_of_poygon.cpp","group":"local","local":true}
