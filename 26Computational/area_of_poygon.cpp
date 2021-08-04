@@ -25,8 +25,8 @@ double area(Polygon p,int n)
     for(int i=0;i<n-1;i++)
     {
         double x1 = p.points[i].x - p.points[0].x;
-        double x2 =p.points[i].y - p.points[0].y;
-        double y1 =p.points[i+1].x - p.points[0].x;
+        double y1 =p.points[i].y - p.points[0].y;
+        double x2 =p.points[i+1].x - p.points[0].x;
         double y2 =p.points[i+1].y - p.points[0].y;
         double cross_p = x1*y2 - y1*x2;
         fArea += cross_p;
